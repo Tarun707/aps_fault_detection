@@ -13,4 +13,4 @@ pip install -r requirements.txt
 python main.py
 ```
 
-This is changes made in neuro lab
+This file is edited by Tarun in GitHub

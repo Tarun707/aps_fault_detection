@@ -7,7 +7,7 @@ import os
 # convert the datetime object into a string with required format.
 
 # log file name
-LOG_FILE_NAME = f"{datetime.now().strftime('%m_%d_%Y__%H_%M_%S')}.log"
+LOG_FILE_NAME = f"{datetime.now().strftime('%d_%m_%Y__%H:%M:%S')}.log"
 
 # log directory
 LOG_FILE_DIR = os.path.join(os.getcwd(), "logs")

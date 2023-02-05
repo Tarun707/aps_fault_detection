@@ -11,4 +11,4 @@ class EnvironmentVariable:
     aws_access_secret_id = os.getenv("AWS_ACCESS_SECRET_ID")
 
 env_var = EnvironmentVariable()
-mongo_client = pymonogo.MongoClient(env_var.mongo_db_url)
+mongo_client = pymongo.MongoClient(env_var.mongo_db_url)

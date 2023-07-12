@@ -13,14 +13,14 @@ with DAG(
     # [END default_args]
     description='Sensor Fault Detection',
     schedule_interval="@weekly",
-    start_date=pendulum.datetime(2023, 7, 11, tz="UTC"),
+    start_date=pendulum.datetime(2022, 12, 11, tz="UTC"),
     catchup=False,
     tags=['example'],
 ) as dag:
 
     
     def training(**kwargs):
-        from src.pipeline.training_pipeline import start_training_pipeline
+        from sensor.pipeline.training_pipeline import start_training_pipeline
         start_training_pipeline()
     
     def sync_artifact_to_s3_bucket(**kwargs):

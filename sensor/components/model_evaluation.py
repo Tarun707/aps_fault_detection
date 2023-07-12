@@ -45,7 +45,7 @@ class ModelEvaluation:
 
             
             #Finding location of transformer model and target encoder
-            logging.info("Finding location of transformer model and target encoder")
+            logging.info("Finding location of transformer, model and target encoder")
             transformer_path = self.model_resolver.get_latest_transformer_path()
             model_path = self.model_resolver.get_latest_model_path()
             target_encoder_path = self.model_resolver.get_latest_target_encoder_path()
@@ -58,6 +58,7 @@ class ModelEvaluation:
 
 
             logging.info("Currently trained model objects")
+            
             #Currently trained model objects
             current_transformer = load_object(file_path=self.data_transformation_artifact.transform_object_path)
             current_model  = load_object(file_path=self.model_trainer_artifact.model_path)
@@ -66,6 +67,7 @@ class ModelEvaluation:
             test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
             target_df = test_df[TARGET_COLUMN]
             y_true =target_encoder.transform(target_df)
+
             # accuracy using previous trained model
 
             input_feature_name = list(transformer.feature_names_in_)

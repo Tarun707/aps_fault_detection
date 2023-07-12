@@ -11,7 +11,7 @@ class ModelPusher:
     data_transformation_artifact:DataTransformationArtifact,
     model_trainer_artifact:ModelTrainerArtifact):
         try:
-            logging.info(f"{'>>'*20} Data Transformation {'<<'*20}")
+            logging.info(f"{'>>'*20} Model Pusher {'<<'*20}")
             self.model_pusher_config=model_pusher_config
             self.data_transformation_artifact=data_transformation_artifact
             self.model_trainer_artifact=model_trainer_artifact
@@ -22,7 +22,7 @@ class ModelPusher:
     def initiate_model_pusher(self,)->ModelPusherArtifact:
         try:
             #load object
-            logging.info(f"Loading transformer model and target encoder")
+            logging.info(f"Loading transformer, model and target encoder")
             transformer = load_object(file_path=self.data_transformation_artifact.transform_object_path)
             model = load_object(file_path=self.model_trainer_artifact.model_path)
             target_encoder = load_object(file_path=self.data_transformation_artifact.target_encoder_path)
